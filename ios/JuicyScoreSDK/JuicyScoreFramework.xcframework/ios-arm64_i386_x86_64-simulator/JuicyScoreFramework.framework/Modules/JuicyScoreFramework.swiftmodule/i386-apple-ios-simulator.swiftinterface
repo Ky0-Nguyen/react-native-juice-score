@@ -1,0 +1,55 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target i386-apple-ios9.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name JuicyScoreFramework
+import CallKit
+import CoreTelephony
+import Darwin
+import Foundation
+@_exported import JuicyScoreFramework
+import MachO
+import Swift
+import UIKit
+import _Concurrency
+@_inheritsConvenienceInitializers @objc public class TelephonyNetworkInfo : ObjectiveC.NSObject {
+  @available(iOS 12.0, *)
+  @objc public static func getTelephonyNetworkInfo() -> Swift.String?
+  @available(iOS 10.0, *)
+  @objc public static func getActiveCallsInfo() -> Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class JuicyEmulatorChecker : ObjectiveC.NSObject {
+  @objc public static func isRunInEmulator() -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class TestClass : ObjectiveC.NSObject {
+  @objc final public let testVar: Swift.Int
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum JailbreakCheck : Swift.CaseIterable {
+  case urlSchemes
+  case existenceOfSuspiciousFiles
+  case suspiciousFilesCanBeOpened
+  case restrictedDirectoriesWriteable
+  case fork
+  case symbolicLinks
+  case dyld
+  public static func == (a: JuicyScoreFramework.JailbreakCheck, b: JuicyScoreFramework.JailbreakCheck) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public typealias AllCases = [JuicyScoreFramework.JailbreakCheck]
+  public static var allCases: [JuicyScoreFramework.JailbreakCheck] {
+    get
+  }
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class JuicyJailbreakChecker : ObjectiveC.NSObject {
+  @objc public static func isDeviceJailbroken() -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension JuicyScoreFramework.JailbreakCheck : Swift.Equatable {}
+extension JuicyScoreFramework.JailbreakCheck : Swift.Hashable {}

@@ -1,0 +1,48 @@
+stages:
+  - gitlab_test
+  - package
+
+# Gitlab security check
+# You can override the included template(s) by including variable overrides
+# SAST customization: https://docs.gitlab.com/ee/user/application_security/sast/#customizing-the-sast-settings
+# Secret Detection customization: https://docs.gitlab.com/ee/user/application_security/secret_detection/#customizing-settings
+# Dependency Scanning customization: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#customizing-the-dependency-scanning-settings
+# Note that environment variables can be set in several places
+# See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
+sast:
+  stage: gitlab_test
+include:
+  - template: Security/SAST.gitlab-ci.yml
+
+spotbugs-sast:
+  stage: gitlab_test
+  variables:
+    FAIL_NEVER: 1
+
+npm_package:
+  stage: package
+  image: node:16-alpine
+  script:
+    - yarn
+    - yarn prepare
+    - npm pack
+  artifacts:
+    expire_in: 1 mos
+    name: "rn-npm-juicyscore-$CI_COMMIT_REF_NAME-$CI_COMMIT_SHORT_SHA"
+    paths:
+      - README.md
+      - rn-juicy-score*.tgz
+
+zip_archive:
+  stage: package
+  image: node:16-alpine
+  script:
+    - rm -fr .git
+    - rm .git*
+    - rm -fr .editorconfig .husky
+  artifacts:
+    expire_in: 1 mos
+    name: "rn-juicyscore-$CI_COMMIT_REF_NAME-$CI_COMMIT_SHORT_SHA"
+    paths:
+      - ./
+ 
