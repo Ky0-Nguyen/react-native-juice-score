@@ -54,6 +54,7 @@ repositories {
 
 dependencies {
     //noinspection GradleDynamicVersion
+    implementation fileTree(dir: "libs", include: ["*.aar"])
     implementation "com.facebook.react:react-native:+"
     implementation files('JuicyScoreSDK/juicyscore_android.aar')  // From node_modules
     implementation "com.google.android.gms:play-services-location:15.0.1"
