@@ -4,6 +4,9 @@ buildscript {
             google()
             mavenCentral()
             jcenter()
+            flatDir {
+              dirs 'JuicyScoreSDK/juicyscore_android.aar'
+            }
         }
 
         dependencies {
