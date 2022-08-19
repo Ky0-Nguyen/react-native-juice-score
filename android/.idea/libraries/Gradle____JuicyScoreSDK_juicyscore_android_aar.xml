@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: ./JuicyScoreSDK/juicyscore_android.aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/9c10e4704a133530f9046df6e7339131/transformed/juicyscore_android/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9c10e4704a133530f9046df6e7339131/transformed/juicyscore_android/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9c10e4704a133530f9046df6e7339131/transformed/juicyscore_android/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

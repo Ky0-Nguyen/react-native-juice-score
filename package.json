@@ -1,6 +1,6 @@
 {
   "name": "rn-juicy-score",
-  "version": "13.25.0",
+  "version": "0.0.1",
   "description": "JuicyScore",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
