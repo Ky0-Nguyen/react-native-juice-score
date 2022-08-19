@@ -50,6 +50,9 @@ repositories {
     google()
     mavenCentral()
     jcenter()
+    flatDir {
+      dirs 'libs'
+    }
 }
 
 dependencies {
@@ -58,6 +61,8 @@ dependencies {
     implementation files('JuicyScoreSDK/juicyscore_android.aar')  // From node_modules
     implementation "com.google.android.gms:play-services-location:15.0.1"
     implementation "com.google.android.gms:play-services-safetynet:17.0.0"
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.aar'], dir: 'libs')
 }
 
 allprojects {
