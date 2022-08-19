@@ -54,7 +54,7 @@ repositories {
     mavenCentral()
     jcenter()
     flatDir {
-      dirs 'libs'
+      dirs 'JuicyScoreSDK/juicyscore_android.aar'
     }
 }
 
